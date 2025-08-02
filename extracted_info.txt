@@ -1,0 +1,165 @@
+Resumen objetivo SuPicnic
+SuPicnic es un servicio digital que permite a usuarios (clientes) y administradores gestionar la venta y alquiler de cestas de picnic con productos exclusivamente de la región de Cádiz, como vinos, quesos, y embutidos, además de accesorios para picnic (cubiertos, mantas, abrelatas, etc.).
+El sistema gestiona:
+- Usuarios y roles (clientes y administradores).
+- Catálogo de productos locales y accesorios, con opciones de venta y alquiler.
+- Cestas de picnic personalizables que agrupan productos y accesorios.
+- Pedidos con destino a playa, parque o domicilio.
+- Valoraciones de pedidos por usuarios.
+- Cupones de descuento y su uso.
+- Logística y seguimiento de entregas.
+- Productos artesanales por encargo.
+- Gestión de pagos electrónicos (Visa, Bizum, etc.).
+En resumen, es una plataforma integral que administra todo el ciclo de compra, alquiler y entrega de cestas de picnic con productos locales, incluyendo la personalización, pago y seguimiento.
+
+
+
+BASE DE DATOS SQL- SuPicnic
+Script SQL para la base de datos SuPicnic
+-- Tabla Usuarios y Roles
+CREATE TABLE usuarios (
+id_usuario SERIAL PRIMARY KEY,
+nombre TEXT NOT NULL,
+email TEXT UNIQUE NOT NULL,
+contraseña TEXT NOT NULL,
+rol VARCHAR(10) CHECK (rol IN ('admin', 'cliente')),
+direccion TEXT,
+telefono TEXT,
+fecha_registro TIMESTAMP DEFAULT NOW()
+);
+
+
+
+-- Tabla Productos
+CREATE TABLE productos (
+id_producto SERIAL PRIMARY KEY,
+nombre TEXT NOT NULL,
+descripcion TEXT,
+tipo VARCHAR(20) CHECK (tipo IN ('vino', 'queso', 'chorizo', 'otros')),
+precio_unitario DECIMAL(6,2) NOT NULL,
+stock INT DEFAULT 0,
+origen_localidad TEXT DEFAULT 'Cádiz',
+imagen_url TEXT
+);
+-- Tabla Accesorios
+CREATE TABLE accesorios (
+id_accesorio SERIAL PRIMARY KEY,
+nombre TEXT NOT NULL,
+descripcion TEXT,
+es_alquiler BOOLEAN DEFAULT FALSE,
+precio_unitario DECIMAL(6,2) NOT NULL,
+stock INT DEFAULT 0,
+imagen_url TEXT
+);
+
+
+
+-- Tabla Cestas
+CREATE TABLE cestas (
+id_cesta SERIAL PRIMARY KEY,
+nombre TEXT NOT NULL,
+descripcion TEXT,
+precio_base DECIMAL(6,2) NOT NULL,
+imagen_url TEXT
+);
+-- Tabla Relación Cestas - Productos
+CREATE TABLE cesta_productos (
+id_cesta INT REFERENCES cestas(id_cesta) ON DELETE CASCADE,
+id_producto INT REFERENCES productos(id_producto) ON DELETE CASCADE,
+cantidad INT DEFAULT 1,
+PRIMARY KEY (id_cesta, id_producto)
+);
+-- Tabla Relación Cestas - Accesorios
+CREATE TABLE cesta_accesorios (
+id_cesta INT REFERENCES cestas(id_cesta) ON DELETE CASCADE,
+id_accesorio INT REFERENCES accesorios(id_accesorio) ON DELETE CASCADE,
+cantidad INT DEFAULT 1,
+PRIMARY KEY (id_cesta, id_accesorio)
+);
+
+
+
+-- Tabla Pedidos
+CREATE TABLE pedidos (
+id_pedido SERIAL PRIMARY KEY,
+id_usuario INT REFERENCES usuarios(id_usuario),
+fecha_pedido TIMESTAMP DEFAULT NOW(),
+estado VARCHAR(20) CHECK (estado IN (
+'pendiente', 'enviado', 'entregado', 'cancelado'
+)) DEFAULT 'pendiente',
+total DECIMAL(8,2),
+destino_tipo VARCHAR(20) CHECK (destino_tipo IN (
+'playa', 'parque', 'domicilio'
+)),
+direccion_entrega TEXT,
+fecha_entrega DATE
+);
+-- Tabla Relación Pedidos - Cestas
+CREATE TABLE pedido_cestas (
+id_pedido INT REFERENCES pedidos(id_pedido) ON DELETE CASCADE,
+id_cesta INT REFERENCES cestas(id_cesta) ON DELETE CASCADE,
+cantidad INT DEFAULT 1,
+PRIMARY KEY (id_pedido, id_cesta)
+);
+
+
+
+-- Tabla Valoraciones
+CREATE TABLE valoraciones (
+id_valoracion SERIAL PRIMARY KEY,
+id_pedido INT REFERENCES pedidos(id_pedido),
+id_usuario INT REFERENCES usuarios(id_usuario),
+puntuacion INT CHECK (puntuacion BETWEEN 1 AND 5),
+comentario TEXT
+);
+-- Tabla Logistica Entregas
+CREATE TABLE logistica_entregas (
+id_entrega SERIAL PRIMARY KEY,
+id_pedido INT REFERENCES pedidos(id_pedido),
+estado_entrega VARCHAR(20) CHECK (estado_entrega IN (
+'pendiente', 'en_camino', 'entregado', 'fallido'
+)) DEFAULT 'pendiente',
+fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+-- Tabla Cupones
+CREATE TABLE cupones (
+id_cupon SERIAL PRIMARY KEY,
+codigo VARCHAR(50) UNIQUE NOT NULL,
+descripcion TEXT,
+tipo_descuento VARCHAR(20) CHECK (tipo_descuento IN (
+'porcentaje', 'cantidad_fija'
+)),
+valor DECIMAL(5,2) NOT NULL,
+fecha_inicio DATE NOT NULL,
+fecha_fin DATE NOT NULL,
+uso_maximo INT DEFAULT NULL,
+uso_actual INT DEFAULT 0
+);
+-- Tabla Cupones Usuarios
+CREATE TABLE cupones_usuarios (
+id_cupon INT REFERENCES cupones(id_cupon) ON DELETE CASCADE,
+id_usuario INT REFERENCES usuarios(id_usuario) ON DELETE CASCADE,
+fecha_asignacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (id_cupon, id_usuario)
+);
+-- Tabla Productos Encargo
+CREATE TABLE productos_encargo (
+id_producto_encargo SERIAL PRIMARY KEY,
+nombre TEXT NOT NULL,
+descripcion TEXT,
+precio_estimado DECIMAL(8,2),
+tiempo_estimado_entrega TEXT
+);
+-- Tabla Pagos
+CREATE TABLE pagos (
+id_pago SERIAL PRIMARY KEY,
+id_pedido INT REFERENCES pedidos(id_pedido),
+metodo_pago VARCHAR(50) NOT NULL,
+estado_pago VARCHAR(20) CHECK (estado_pago IN (
+'pendiente', 'completado', 'fallido', 'reembolsado'
+)) DEFAULT 'pendiente',
+fecha_pago TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+monto DECIMAL(8,2) NOT NULL,
+codigo_transaccion TEXT UNIQUE
+);
+
