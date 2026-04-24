@@ -1,5 +1,5 @@
 // Configuración de la API
-const API_BASE_URL = 'https://qjh9iecej3pj.manus.space/api';
+const API_BASE_URL = '/api';
 
 // Datos de productos y cestas (ahora se cargarán desde la API)
 let productos = [];

@@ -1,0 +1,16 @@
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  output: 'standalone',
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: `${process.env.BACKEND_URL ?? 'http://backend:5000'}/api/:path*`,
+      },
+    ]
+  },
+  images: { unoptimized: true },
+};
+
+export default nextConfig;

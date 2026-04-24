@@ -46,105 +46,87 @@
         </div>
     </nav>
 
-    <!-- Carrusel Hero Mejorado -->
-    <section id="inicio" class="hero-section">
-        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="images/GIlHXzpxLG9m.jpg" class="d-block w-100" alt="Su Picnic - Experiencias únicas en Cádiz">
-                    <div class="carousel-caption">
-                        <h1 class="display-3 fw-bold mb-4">Su Picnic</h1>
-                        <p class="lead mb-4">Descubre la autenticidad de Cádiz en cada experiencia picnic. Cestas artesanales con productos locales seleccionados para crear momentos inolvidables.</p>
-                        <div class="carousel-buttons">
-                            <a href="productos.html" class="btn btn-primary btn-lg me-3">
-                                <i class="fas fa-wine-glass me-2"></i>Ver Productos
-                            </a>
-                            <a href="cestas.html" class="btn btn-outline-light btn-lg">
+    <!-- Hero — Vídeo a pantalla completa -->
+    <section id="inicio" class="hero-video-section">
+
+        <!-- Vídeo de fondo -->
+        <div class="hero-video-wrap">
+            <video class="hero-video" autoplay muted loop playsinline
+                   poster="images/GIlHXzpxLG9m.jpg">
+                <!-- Vídeo libre de Pexels — picnic / comida mediterránea al aire libre -->
+                <source src="https://videos.pexels.com/video-files/3253421/3253421-hd_1920_1080_25fps.mp4" type="video/mp4">
+                <source src="https://videos.pexels.com/video-files/3173617/3173617-hd_1920_1080_25fps.mp4" type="video/mp4">
+            </video>
+            <!-- Degradado multicapa para legibilidad del texto -->
+            <div class="hero-overlay"></div>
+        </div>
+
+        <!-- Contenido centrado -->
+        <div class="hero-content">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-9 col-xl-8">
+
+                        <div class="hero-eyebrow">
+                            <span class="hero-eyebrow-dot"></span>
+                            Cádiz &nbsp;·&nbsp; Andalucía
+                            <span class="hero-eyebrow-dot"></span>
+                        </div>
+
+                        <h1 class="hero-title">
+                            El Picnic Perfecto,<br>
+                            <em>desde el corazón de Cádiz</em>
+                        </h1>
+
+                        <p class="hero-subtitle">
+                            Cestas artesanales con los mejores productos locales.<br>
+                            Entregadas donde quieras, cuando quieras.
+                        </p>
+
+                        <div class="hero-cta-group">
+                            <a href="cestas.html" class="hero-btn-primary">
                                 <i class="fas fa-shopping-basket me-2"></i>Explorar Cestas
                             </a>
+                            <a href="productos.html" class="hero-btn-secondary">
+                                <i class="fas fa-wine-glass me-2"></i>Ver Productos
+                            </a>
                         </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="images/OOPP2Zcv3lPs.jpg" class="d-block w-100" alt="Productos locales de Cádiz">
-                    <div class="carousel-caption">
-                        <h2 class="display-4 fw-bold mb-4">Productos Locales</h2>
-                        <p class="lead mb-4">Vinos, quesos y embutidos artesanales de la región de Cádiz. Productos seleccionados directamente de productores locales para garantizar la máxima calidad y autenticidad.</p>
-                        <div class="carousel-features mb-4">
-                            <div class="feature-item">
-                                <i class="fas fa-leaf text-success"></i>
+
+                        <div class="hero-trust">
+                            <div class="hero-trust-item">
+                                <i class="fas fa-leaf"></i>
                                 <span>100% Natural</span>
                             </div>
-                            <div class="feature-item">
-                                <i class="fas fa-map-marker-alt text-primary"></i>
+                            <div class="hero-trust-sep"></div>
+                            <div class="hero-trust-item">
+                                <i class="fas fa-map-marker-alt"></i>
                                 <span>Origen Local</span>
                             </div>
-                            <div class="feature-item">
-                                <i class="fas fa-award text-warning"></i>
-                                <span>Calidad Premium</span>
+                            <div class="hero-trust-sep"></div>
+                            <div class="hero-trust-item">
+                                <i class="fas fa-truck"></i>
+                                <span>Entrega en 24h</span>
+                            </div>
+                            <div class="hero-trust-sep"></div>
+                            <div class="hero-trust-item">
+                                <i class="fas fa-star"></i>
+                                <span>4.9 · 500+ clientes</span>
                             </div>
                         </div>
-                        <a href="productos.html" class="btn btn-outline-light btn-lg">
-                            <i class="fas fa-list me-2"></i>Ver Catálogo Completo
-                        </a>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="images/mtHLEHbNjgxg.jpg" class="d-block w-100" alt="Cestas personalizadas de picnic">
-                    <div class="carousel-caption">
-                        <h2 class="display-4 fw-bold mb-4">Cestas Personalizadas</h2>
-                        <p class="lead mb-4">Crea tu experiencia picnic perfecta. Desde cestas románticas hasta celebraciones familiares, cada cesta está cuidadosamente diseñada para tu ocasión especial.</p>
-                        <div class="carousel-categories mb-4">
-                            <span class="category-badge">Románticas</span>
-                            <span class="category-badge">Familiares</span>
-                            <span class="category-badge">Celebraciones</span>
-                            <span class="category-badge">Personalizadas</span>
-                        </div>
-                        <a href="cestas.html" class="btn btn-success btn-lg">
-                            <i class="fas fa-heart me-2"></i>Personalizar Mi Cesta
-                        </a>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="images/WOuWNun9bBl1.jpg" class="d-block w-100" alt="Entrega en toda Cádiz">
-                    <div class="carousel-caption">
-                        <h2 class="display-4 fw-bold mb-4">Entrega en Toda Cádiz</h2>
-                        <p class="lead mb-4">Llevamos tu picnic perfecto donde quieras. Entrega en 24 horas en toda la provincia de Cádiz, incluyendo playas, parques y domicilio.</p>
-                        <div class="carousel-delivery mb-4">
-                            <div class="delivery-option">
-                                <i class="fas fa-home text-primary"></i>
-                                <span>Domicilio</span>
-                            </div>
-                            <div class="delivery-option">
-                                <i class="fas fa-umbrella-beach text-warning"></i>
-                                <span>Playa</span>
-                            </div>
-                            <div class="delivery-option">
-                                <i class="fas fa-tree text-success"></i>
-                                <span>Parque</span>
-                            </div>
-                        </div>
-                        <a href="contacto.html" class="btn btn-warning btn-lg">
-                            <i class="fas fa-phone me-2"></i>Hacer Pedido
-                        </a>
+
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-            </button>
+
+            <!-- Indicador de scroll -->
+            <div class="hero-scroll-indicator">
+                <span class="hero-scroll-label">Descubre más</span>
+                <div class="hero-scroll-mouse">
+                    <div class="hero-scroll-wheel"></div>
+                </div>
+            </div>
         </div>
+
     </section>
 
 
@@ -231,38 +213,41 @@
     <!-- Sección de Características -->
     <section class="py-5 bg-light">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center mb-5">
-                    <h2 class="display-4 fw-bold">¿Por qué elegir nuestros productos?</h2>
+            <div class="row mb-5">
+                <div class="col-lg-12 text-center">
+                    <p class="section-label">Nuestros Valores</p>
+                    <h2 class="display-4">¿Por qué elegirnos?</h2>
+                    <div class="section-divider"></div>
+                    <p class="lead">Cada detalle ha sido pensado para ofrecerte lo mejor de Cádiz</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="text-center">
-                        <i class="fas fa-leaf text-success fs-1 mb-3"></i>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="fas fa-leaf" style="color:var(--sage);"></i></div>
                         <h5>100% Natural</h5>
-                        <p class="text-muted">Productos sin conservantes artificiales</p>
+                        <p>Productos sin conservantes artificiales, directo de la tierra a tu cesta</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="text-center">
-                        <i class="fas fa-map-marker-alt text-primary fs-1 mb-3"></i>
+                <div class="col-lg-3 col-md-6">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="fas fa-map-marker-alt" style="color:var(--blue);"></i></div>
                         <h5>Origen Local</h5>
-                        <p class="text-muted">Directamente de productores de Cádiz</p>
+                        <p>Directamente de productores artesanos de la provincia de Cádiz</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="text-center">
-                        <i class="fas fa-award text-warning fs-1 mb-3"></i>
+                <div class="col-lg-3 col-md-6">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="fas fa-award" style="color:var(--gold);"></i></div>
                         <h5>Calidad Premium</h5>
-                        <p class="text-muted">Seleccionados por expertos</p>
+                        <p>Seleccionados por expertos gastronómicos con criterios rigurosos</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="text-center">
-                        <i class="fas fa-shipping-fast text-info fs-1 mb-3"></i>
-                        <h5>Entrega Rápida</h5>
-                        <p class="text-muted">En 24 horas en toda Cádiz</p>
+                <div class="col-lg-3 col-md-6">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="fas fa-shipping-fast" style="color:var(--sage);"></i></div>
+                        <h5>Entrega en 24h</h5>
+                        <p>Llevamos tu picnic perfecto donde quieras en toda la provincia</p>
                     </div>
                 </div>
             </div>
@@ -270,35 +255,31 @@
     </section>
 
     <!-- Sección de Estadísticas -->
-    <section class="py-5 text-white" style="background-color: var(--andalucia-green);">
+    <section class="py-5 stats-section text-white">
         <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-3 col-md-6 mb-4">
+            <div class="row text-center align-items-center g-0">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
                     <div class="stat-item">
-                        <i class="fas fa-users fs-1 mb-3" style="color: var(--andalucia-green);"></i>
-                        <h3 class="fw-bold">500+</h3>
-                        <p class="mb-0">Clientes Satisfechos</p>
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Clientes Satisfechos</div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
                     <div class="stat-item">
-                        <i class="fas fa-shopping-basket fs-1 mb-3" style="color: var(--cadiz-blue);"></i>
-                        <h3 class="fw-bold">1000+</h3>
-                        <p class="mb-0">Cestas Entregadas</p>
+                        <div class="stat-number">1.000+</div>
+                        <div class="stat-label">Cestas Entregadas</div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
                     <div class="stat-item">
-                        <i class="fas fa-star fs-1 mb-3" style="color: var(--andalucia-green);"></i>
-                        <h3 class="fw-bold">4.9</h3>
-                        <p class="mb-0">Valoración Media</p>
+                        <div class="stat-number">4.9</div>
+                        <div class="stat-label">Valoración Media</div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
+                <div class="col-lg-3 col-md-6">
                     <div class="stat-item">
-                        <i class="fas fa-truck fs-1 mb-3" style="color: var(--cadiz-blue);"></i>
-                        <h3 class="fw-bold">24h</h3>
-                        <p class="mb-0">Tiempo de Entrega</p>
+                        <div class="stat-number">24h</div>
+                        <div class="stat-label">Tiempo de Entrega</div>
                     </div>
                 </div>
             </div>
@@ -308,72 +289,56 @@
     <!-- Sección de Testimonios -->
     <section class="py-5 bg-light">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center mb-5">
-                    <h2 class="display-4 fw-bold">Lo que dicen nuestros clientes</h2>
-                    <p class="lead text-muted">Experiencias reales de quienes han disfrutado de nuestros picnics</p>
+            <div class="row mb-5">
+                <div class="col-lg-12 text-center">
+                    <p class="section-label">Testimonios</p>
+                    <h2 class="display-4">Lo que dicen nuestros clientes</h2>
+                    <div class="section-divider"></div>
+                    <p class="lead">Experiencias reales de quienes han disfrutado de nuestros picnics</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center p-4">
-                            <div class="mb-3">
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                            </div>
-                            <p class="card-text">"Increíble experiencia. La cesta romántica superó todas nuestras expectativas. Productos frescos y de excelente calidad."</p>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <img src="images/DemHDxNANYlU.jpg" class="rounded-circle me-3" width="50" height="50" alt="Cliente">
-                                <div>
-                                    <h6 class="mb-0">María & Carlos</h6>
-                                    <small class="text-muted">Cádiz</small>
-                                </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Increíble experiencia. La cesta romántica superó todas nuestras expectativas. Productos frescos y de excelente calidad."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar" style="background:var(--sage);">MC</div>
+                            <div>
+                                <p class="testimonial-author-name">María &amp; Carlos</p>
+                                <span class="testimonial-author-location">Cádiz</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center p-4">
-                            <div class="mb-3">
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                            </div>
-                            <p class="card-text">"Perfecto para nuestra celebración familiar. Entrega puntual y productos deliciosos. ¡Altamente recomendado!"</p>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <img src="images/HuTU06vTfElr.jpg" class="rounded-circle me-3" width="50" height="50" alt="Cliente">
-                                <div>
-                                    <h6 class="mb-0">Familia García</h6>
-                                    <small class="text-muted">San Fernando</small>
-                                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Perfecto para nuestra celebración familiar. Entrega puntual y productos deliciosos. ¡Altamente recomendado!"</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar" style="background:var(--blue);">FG</div>
+                            <div>
+                                <p class="testimonial-author-name">Familia García</p>
+                                <span class="testimonial-author-location">San Fernando</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center p-4">
-                            <div class="mb-3">
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                            </div>
-                            <p class="card-text">"Excelente servicio al cliente y productos de primera calidad. El vino local es espectacular."</p>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <img src="images/KVy74N9ytETO.jpg" class="rounded-circle me-3" width="50" height="50" alt="Cliente">
-                                <div>
-                                    <h6 class="mb-0">Ana Martínez</h6>
-                                    <small class="text-muted">El Puerto</small>
-                                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Excelente servicio al cliente y productos de primera calidad. El vino local es espectacular. Sin duda repetiré."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar" style="background:var(--gold);">AM</div>
+                            <div>
+                                <p class="testimonial-author-name">Ana Martínez</p>
+                                <span class="testimonial-author-location">El Puerto de Santa María</span>
                             </div>
                         </div>
                     </div>
@@ -402,72 +367,18 @@
         </div>
     </section>
 
-    <!-- Sección de Blog/Noticias -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center mb-5">
-                    <h2 class="display-4 fw-bold">Últimas Noticias</h2>
-                    <p class="lead text-muted">Descubre consejos, recetas y novedades del mundo picnic</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="card border-0 shadow-sm h-100">
-                        <img src="images/MFD4MZYrVOA2.jpg" class="card-img-top" alt="Blog Post 1">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-2">
-                                <span class="badge me-2" style="background-color: var(--cadiz-blue);">Consejos</span>
-                                <small class="text-muted">Hace 2 días</small>
-                            </div>
-                            <h5 class="card-title">Los mejores lugares para picnic en Cádiz</h5>
-                            <p class="card-text">Descubre los rincones más hermosos de la provincia para disfrutar de tu cesta Su Picnic.</p>
-                            <a href="#" class="btn btn-outline-primary btn-sm">Leer más</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card border-0 shadow-sm h-100">
-                        <img src="images/nEMtQ9S5F55Q.jpg" class="card-img-top" alt="Blog Post 2">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-2">
-                                <span class="badge me-2" style="background-color: var(--andalucia-green);">Recetas</span>
-                                <small class="text-muted">Hace 1 semana</small>
-                            </div>
-                            <h5 class="card-title">Cómo maridar vinos locales con quesos</h5>
-                            <p class="card-text">Aprende las mejores combinaciones de nuestros productos para una experiencia gastronómica perfecta.</p>
-                            <a href="#" class="btn btn-outline-primary btn-sm">Leer más</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card border-0 shadow-sm h-100">
-                        <img src="images/ocLnja6bKCA7.jpg" class="card-img-top" alt="Blog Post 3">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-2">
-                                <span class="badge me-2" style="background-color: var(--cadiz-blue);">Novedades</span>
-                                <small class="text-muted">Hace 2 semanas</small>
-                            </div>
-                            <h5 class="card-title">Nuevos productos de temporada</h5>
-                            <p class="card-text">Descubre las últimas incorporaciones a nuestro catálogo de productos locales.</p>
-                            <a href="#" class="btn btn-outline-primary btn-sm">Leer más</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Sección de Newsletter -->
-    <section class="py-5 bg-light">
+    <section class="py-5 newsletter-section">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h3 class="fw-bold mb-3">¡Mantente informado!</h3>
-                    <p class="text-muted mb-4">Suscríbete para recibir ofertas especiales, consejos y novedades de Su Picnic</p>
-                    <form class="row g-3 justify-content-center">
+                <div class="col-lg-7 text-center">
+                    <p class="section-label">Newsletter</p>
+                    <h3 class="display-5 mb-3">Recibe lo mejor de Cádiz</h3>
+                    <p class="text-muted mb-4" style="font-size:0.95rem;">Ofertas exclusivas, consejos de maridaje y novedades de temporada directamente en tu bandeja</p>
+                    <form class="row g-2 justify-content-center">
                         <div class="col-md-8">
-                            <input type="email" class="form-control form-control-lg" placeholder="Tu email" required>
+                            <input type="email" class="form-control form-control-lg" placeholder="tu@email.com" required>
                         </div>
                         <div class="col-md-4">
                             <button type="submit" class="btn btn-primary btn-lg w-100">
@@ -475,6 +386,7 @@
                             </button>
                         </div>
                     </form>
+                    <p class="mt-3 text-muted" style="font-size:0.78rem;letter-spacing:0.04em;">Sin spam. Cancela cuando quieras.</p>
                 </div>
             </div>
         </div>
